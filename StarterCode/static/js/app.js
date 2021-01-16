@@ -19,5 +19,39 @@ function  getPlot(id) {
     // Format OTU IDs for plot
     var idOTU = idValues.map(d => "OTU" + d)
     console.log('OTU IDs: ${idOTU}')
+
+    // Slice to get labels for plot
+    var labels = samples.otu_labels.slice(0, 10);
+    console.log('Sample Values: ${sampleValues}')
+    console.log('ID Values: ${idValues}')
+
+    // Trace for plot
+    var trace = {
+        x: sampleValues,
+        y: idOTU,
+        type: "bar",
+        text: labels,
+        orientation: "h",
+        marker: {color: 'rgb(225,150,60)'}
+    };
+
+    // Data variable
+    var data = [trace];
+
+    // Layout variable
+    var layout = {
+        title: "Top Ten OTUs",
+        yaxis:{
+            tickmode:"linear",
+        },
+        margin: {
+            l: 100,
+            r: 100,
+            t: 25,
+            b: 25
+        }
+    };
+
+    
 }
 }
