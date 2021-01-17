@@ -92,10 +92,17 @@ function  getPlot(id) {
             axis: { range: [null, 9] },
             steps: [
                 { range: [0, 1], color: "ffe3b1" },
-            ] 
-    }
+                { range: [1, 2], color: "ffdc9d" },
+                { range: [2, 3], color: "ffd589" },
+                { range: [3, 4], color: "ffcf76" },
+                { range: [4, 5], color: "ffc862" },
+                { range: [5, 6], color: "ffc14e" },
+                { range: [6, 7], color: "ffba3b" },
+                { range: [7, 8], color: "ffb327" },
+                { range: [8, 9], color: "ffac14" },
+            ]} 
         }
-    ]
+    ];
 
 }
 }
