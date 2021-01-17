@@ -47,8 +47,8 @@ function  getPlot(id) {
         margin: {
             l: 100,
             r: 100,
-            t: 25,
-            b: 25
+            t: 100,
+            b: 30
         }
     };
 
@@ -104,5 +104,31 @@ function  getPlot(id) {
         }
     ];
 
+    // Gauge layout
+    var layout_gauge = {
+        width: 600,
+        height: 600,
+        margin: { 
+            t: 25, 
+            b: 40,
+            l: 100,
+            r: 100
+        } 
+    };
+    
+    // Gauge Plot
+    Plotly.newPlot("gauge", data_gauge, layout_gauge);
+    });
 }
+
+    // Function for getting data
+function getData(id) {
+    d3.json("static/samples.json").then((data)=> {
+
+        var metadata = data.metadata;
+        console.log(metadata)
+
+    // Filter metadata by ID
+    var results = metadata.filter(meta => meta.id.toString() === id)[0];
+    })
 }
