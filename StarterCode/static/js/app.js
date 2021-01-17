@@ -80,6 +80,22 @@ function  getPlot(id) {
     // Bubble plot
     Plotly.newPlot("bubble", data2, layout);
 
-    
+    // Gauge Chart
+    var data_gauge = [
+        {
+        domain: { x:[0, 1], y: [0, 1] },
+        value: parseFloat(wfreq),
+        title: { text: 'Belly Button Washing Frequency' },
+        type: "indicator",
+        mode: "gauge+number",
+        gauge: { 
+            axis: { range: [null, 9] },
+            steps: [
+                { range: [0, 1], color: "ffe3b1" },
+            ] 
+    }
+        }
+    ]
+
 }
 }
