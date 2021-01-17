@@ -52,6 +52,22 @@ function  getPlot(id) {
         }
     };
 
-    
+    // Bar plot
+    Plotly.newPlot("bar", data, layout);
+
+    // Bubble plot trace
+    var trace2 = {
+        x: samples.otu_ids,
+        y: samples.sample_values,
+        mode: "markers",
+        marker: {
+            size: samples.sample_values,
+            color: samples.otu_ids
+        },
+        text: samples.otu_labels
+    };
+
+
+    }
 }
 }
