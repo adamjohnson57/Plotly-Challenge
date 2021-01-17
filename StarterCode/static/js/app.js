@@ -144,7 +144,31 @@ function getData(id) {
     });
 }
 
+    // Funtion for change event
+function optionChanged(id) {
+    getPlot(id);
+    getData(id);
+}
 
+    // Funtion for data rendering
+function init() {
+    var dropdown = d3.select("#selDataset");
+
+    d3.json("static/samples.json").then((data)=> {
+        console.log(data)
+
+    // ID data for the dropdown menu
+        data.names.forEach(function(name) {
+            dropdown.append("option").text(name).property("value");
+        });
+
+    // Funtions call
+        getPlot(data.names[0]);
+        getData(data.names[0]);
+    });
+}
+
+init();
 
 
 
